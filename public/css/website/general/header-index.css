@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 18px;
+    color: #fff;
+    user-select: none;
+    justify-content: flex-start;
+}
+.header > * {
+    width: fit-content;
+}
+.header .logout {
+    font-size: 17px;
+    font-weight: bold;
+    margin-inline-start: auto;
+    height: 100%;
+    color: #fff;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.header .logout:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.header .logout:active {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 990px) {
+    .header .logo > .icon {
+        width: 60px;
+    }
+    .header .welcome,
+    .header .logout {
+        text-align: center;
+    }
+}

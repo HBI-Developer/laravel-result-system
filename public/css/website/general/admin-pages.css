@@ -1,0 +1,665 @@
+/************************************ Header ***********************************/
+
+.header {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    padding: 10px 20px;
+}
+
+.header .title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+}
+
+/*******************************************************************************/
+
+/************************************ Cover ************************************/
+
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.4039215686);
+}
+
+/*******************************************************************************/
+
+/********************************** Pagination *********************************/
+
+.container .final-degrees .pagination,
+.container .details-degrees .pagination,
+.container .students-table .pagination {
+    background-color: #4caf50;
+    color: #fff;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    user-select: none;
+    align-items: center;
+}
+.container .final-degrees .pagination > *,
+.container .details-degrees .pagination > *,
+.container .students-table .pagination > * {
+    padding: 10px 15px;
+}
+.container .final-degrees .pagination .prev,
+.container .details-degrees .pagination .prev,
+.container .students-table .pagination .prev,
+.container .final-degrees .pagination .next,
+.container .details-degrees .pagination .next,
+.container .students-table .pagination .next {
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.container .final-degrees .pagination .prev.disabled,
+.container .details-degrees .pagination .prev.disabled,
+.container .students-table .pagination .prev.disabled,
+.container .final-degrees .pagination .next.disabled,
+.container .details-degrees .pagination .next.disabled,
+.container .students-table .pagination .next.disabled {
+    color: #aaa;
+    cursor: auto;
+}
+.container .final-degrees .pagination .prev:hover:not(.disabled),
+.container .details-degrees .pagination .prev:hover:not(.disabled),
+.container .students-table .pagination .prev:hover:not(.disabled),
+.container .final-degrees .pagination .next:hover:not(.disabled),
+.container .details-degrees .pagination .next:hover:not(.disabled),
+.container .students-table .pagination .next:hover:not(.disabled) {
+    box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.137254902);
+}
+.container .final-degrees .pagination .prev:active:not(.disabled),
+.container .details-degrees .pagination .prev:active:not(.disabled),
+.container .students-table .pagination .prev:active:not(.disabled),
+.container .final-degrees .pagination .next:active:not(.disabled),
+.container .details-degrees .pagination .next:active:not(.disabled),
+.container .students-table .pagination .next:active:not(.disabled) {
+    box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.2705882353);
+}
+.container .final-degrees .pagination .pages,
+.container .details-degrees .pagination .pages,
+.container .students-table .pagination .pages {
+    text-align: center;
+}
+.container .final-degrees .pagination .pages > *,
+.container .details-degrees .pagination .pages > *,
+.container .students-table .pagination .pages > * {
+    display: inline-block;
+}
+
+/*******************************************************************************/
+
+/********************************* Table Footer ********************************/
+
+.container .final-degrees .footer-table,
+.container .details-degrees .footer-table,
+.container .subjects-table .footer-table,
+.container .students-table .footer-table {
+    background-color: #4caf50;
+    width: 100%;
+    height: 25px;
+}
+
+/*******************************************************************************/
+
+/************************************ Tables ***********************************/
+
+.container .subjects-table .column:not(.title) .major,
+.container .details-degrees .details .student .info-name .title,
+.container .students-table .student .info-name .title {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    height: 100%;
+}
+.container .subjects-table .column:not(.title) .major .options,
+.container .details-degrees .details .student .info-name .title .options,
+.container .students-table .student .info-name .title .options {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.container .subjects-table .column:not(.title) .major .options *,
+.container .details-degrees .details .student .info-name .title .options *,
+.container .students-table .student .info-name .title .options * {
+    font-size: 16px;
+    font-weight: bold;
+    width: 30px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #fff;
+    transition: 0.2s all ease-in-out;
+}
+.container .subjects-table .column:not(.title) .major .options * .icon,
+.container
+    .details-degrees
+    .details
+    .student
+    .info-name
+    .title
+    .options
+    *
+    .icon,
+.container .students-table .student .info-name .title .options * .icon {
+    width: 15px;
+    height: 15px;
+}
+.container .subjects-table .column:not(.title) .major .options > *:hover,
+.container
+    .details-degrees
+    .details
+    .student
+    .info-name
+    .title
+    .options
+    > *:hover,
+.container .students-table .student .info-name .title .options > *:hover {
+    box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.2039215686);
+}
+.container .subjects-table .column:not(.title) .major .options > *:active,
+.container
+    .details-degrees
+    .details
+    .student
+    .info-name
+    .title
+    .options
+    > *:active,
+.container .students-table .student .info-name .title .options > *:active {
+    box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.2705882353);
+}
+.container .subjects-table .column:not(.title) .major .options .edit,
+.container .details-degrees .details .student .info-name .title .options .edit,
+.container .students-table .student .info-name .title .options .edit {
+    background-color: #4caf50;
+}
+.container .subjects-table .column:not(.title) .major .options .delete,
+.container
+    .details-degrees
+    .details
+    .student
+    .info-name
+    .title
+    .options
+    .delete,
+.container .students-table .student .info-name .title .options .delete {
+    background-color: #f44336;
+}
+.container .details-degrees .details .student .info-name,
+.container .students-table .student .info-name {
+    display: grid;
+    align-items: center;
+    font-size: 16px;
+    color: #272727;
+    font-weight: bold;
+    grid-template-columns: auto 1fr;
+}
+.container .details-degrees .details .student .info-name .open-arrow,
+.container .students-table .student .info-name .open-arrow {
+    padding: 10px;
+    user-select: none;
+    transform: rotateZ(90deg);
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.container .details-degrees .details .student .info,
+.container .students-table .student .info {
+    display: none;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    color: #272727;
+    border-top: 1px solid #aaa;
+}
+.container .details-degrees .details .student .info *,
+.container .students-table .student .info * {
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+}
+.container .details-degrees .details .student .info .name,
+.container .students-table .student .info .name {
+    font-weight: bold;
+    border-inline-end: 1px solid #aaa;
+}
+.container .details-degrees .details .student .info .value,
+.container .students-table .student .info .value {
+    text-align: center;
+}
+.container .details-degrees .details .open.student .info-name .open-arrow,
+.container .students-table .open.student .info-name .open-arrow {
+    transform: rotateZ(270deg);
+}
+.container .final-degrees .degrees .nothing,
+.container .details-degrees .details .nothing,
+.container .subjects-table .nothing,
+.container .students-table .nothing {
+    padding: 10px;
+    font-size: 18px;
+    color: #999;
+    user-select: none;
+    text-align: center;
+    font-weight: bold;
+}
+.container .details-degrees .add,
+.container .subjects-table .add,
+.container .students-table .add {
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    background-color: #2196f3;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s all ease-in-out;
+}
+.container .details-degrees .add:hover,
+.container .subjects-table .add:hover,
+.container .students-table .add:hover {
+    box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.2039215686);
+}
+.container .details-degrees .add:active,
+.container .subjects-table .add:active,
+.container .students-table .add:active {
+    box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.2705882353);
+}
+
+/*******************************************************************************/
+
+/********************************* Cover Inputs ********************************/
+
+.container .cover .add-degree .degrees input,
+.container .cover .add-subject .inputs input,
+.cover .student-inputs .inputs input {
+    font-size: 16px;
+    border-bottom: 2px solid #ddd;
+    padding: 5px 10px;
+    text-align: center;
+    transition: 0.2s all ease-in-out;
+}
+.container .cover .add-degree .degrees input[type="number"],
+.container .cover .add-subject .inputs input[type="number"],
+.cover .student-inputs .inputs input[type="number"] {
+    -moz-appearance: textfield;
+}
+.container .cover .add-degree .degrees input:disabled,
+.container .cover .add-subject .inputs input:disabled,
+.cover .student-inputs .inputs input:disabled {
+    user-select: none;
+}
+.container .cover .add-degree .degrees input::-webkit-inner-spin-button,
+.container .cover .add-subject .inputs input::-webkit-inner-spin-button,
+.cover .student-inputs .inputs input::-webkit-inner-spin-button,
+.container .cover .add-degree .degrees input::-webkit-outer-spin-button,
+.container .cover .add-subject .inputs input::-webkit-outer-spin-button,
+.cover .student-inputs .inputs input::-webkit-outer-spin-button {
+    appearance: none;
+}
+.container .cover .add-degree .degrees input:focus,
+.container .cover .add-subject .inputs input:focus,
+.cover .student-inputs .inputs input:focus {
+    outline: none;
+    border-color: #aaa;
+}
+.container .cover .add-degree .students,
+.container .final-degrees .states,
+.container .details-degrees .states,
+.container .cover .add-subject .inputs .majors,
+.cover .student-inputs .inputs .select-input,
+.container .students-table .states,
+.container .subjects-statistics .statistics-table .states {
+    position: relative;
+    user-select: none;
+}
+.container .cover .add-degree .students .selected,
+.container .final-degrees .states .selected,
+.container .details-degrees .states .selected,
+.container .cover .add-subject .inputs .majors .selected,
+.cover .student-inputs .inputs .select-input .selected,
+.container .students-table .states .selected,
+.container .subjects-statistics .statistics-table .states .selected {
+    display: grid;
+    align-items: center;
+    font-size: 18px;
+    color: #272727;
+    font-weight: bold;
+    user-select: none;
+    border-bottom: 1px solid #aaa;
+    cursor: pointer;
+    grid-template-columns: auto 1fr;
+}
+.container .cover .add-degree .students .selected .open-arrow,
+.container .final-degrees .states .selected .open-arrow,
+.container .details-degrees .states .selected .open-arrow,
+.container .cover .add-subject .inputs .majors .selected .open-arrow,
+.cover .student-inputs .inputs .select-input .selected .open-arrow,
+.container .students-table .states .selected .open-arrow,
+.container
+    .subjects-statistics
+    .statistics-table
+    .states
+    .selected
+    .open-arrow {
+    padding: 10px;
+    transform: rotateZ(90deg);
+    transition: 0.2s all ease-in-out;
+}
+.container .cover .add-degree .students .selected .name,
+.container .final-degrees .states .selected .name,
+.container .details-degrees .states .selected .name,
+.container .cover .add-subject .inputs .majors .selected .name,
+.cover .student-inputs .inputs .select-input .selected .name,
+.container .students-table .states .selected .name,
+.container .subjects-statistics .statistics-table .states .selected .name {
+    text-align: center;
+}
+.container .cover .add-degree .students .list,
+.container .final-degrees .states .list,
+.container .details-degrees .states .list,
+.container .cover .add-subject .inputs .majors .list,
+.cover .student-inputs .inputs .select-input .list,
+.container .students-table .states .list,
+.container .subjects-statistics .statistics-table .states .list {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    transform: scaleY(0);
+    transform-origin: top;
+    background-color: #fff;
+    z-index: 2;
+    border: 1px solid #aaa;
+    transition: 0.2s all ease-in-out;
+}
+.container .cover .add-degree .students .list .option,
+.container .final-degrees .states .list .option,
+.container .details-degrees .states .list .option,
+.container .cover .add-subject .inputs .majors .list .option,
+.cover .student-inputs .inputs .select-input .list .option,
+.container .students-table .states .list .option,
+.container .subjects-statistics .statistics-table .states .list .option {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #aaa;
+    transition: 0.2s all ease-in-out;
+}
+.container .cover .add-degree .students .list .option:hover,
+.container .final-degrees .states .list .option:hover,
+.container .details-degrees .states .list .option:hover,
+.container .cover .add-subject .inputs .majors .list .option:hover,
+.cover .student-inputs .inputs .select-input .list .option:hover,
+.container .students-table .states .list .option:hover,
+.container .subjects-statistics .statistics-table .states .list .option:hover {
+    background-color: rgba(0, 0, 0, 0.0666666667);
+    padding-inline-start: 15px;
+}
+.container .cover .add-degree .disabled.students,
+.container .final-degrees .disabled.states,
+.container .details-degrees .disabled.states,
+.container .cover .add-subject .inputs .disabled.majors,
+.cover .student-inputs .inputs .disabled.select-input,
+.container .students-table .disabled.states,
+.container .subjects-statistics .statistics-table .disabled.states {
+    background-color: #eee;
+    color: #383838;
+    user-select: none;
+}
+.container .cover .add-degree .disabled.students .selected,
+.container .final-degrees .disabled.states .selected,
+.container .details-degrees .disabled.states .selected,
+.container .cover .add-subject .inputs .disabled.majors .selected,
+.cover .student-inputs .inputs .disabled.select-input .selected,
+.container .students-table .disabled.states .selected,
+.container .subjects-statistics .statistics-table .disabled.states .selected {
+    cursor: auto;
+}
+.container .cover .add-degree .disabled.students .selected .open-arrow,
+.container .final-degrees .disabled.states .selected .open-arrow,
+.container .details-degrees .disabled.states .selected .open-arrow,
+.container .cover .add-subject .inputs .disabled.majors .selected .open-arrow,
+.cover .student-inputs .inputs .disabled.select-input .selected .open-arrow,
+.container .students-table .disabled.states .selected .open-arrow,
+.container
+    .subjects-statistics
+    .statistics-table
+    .disabled.states
+    .selected
+    .open-arrow {
+    visibility: hidden;
+}
+.container .cover .add-degree .degrees .error,
+.container .cover .add-subject .inputs .error,
+.cover .student-inputs .inputs .error {
+    grid-column: span 2;
+    font-size: 12px;
+    font-weight: bold;
+    color: #f44336;
+    user-select: none;
+    text-align: center;
+    display: none;
+}
+.container .cover .add-degree .buttons > *.send p,
+.container .cover .add-subject .buttons > *.send p,
+.cover .student-inputs .buttons > *.send p {
+    display: inline;
+}
+.container .cover .add-degree .buttons > *.send .dots,
+.container .cover .add-subject .buttons > *.send .dots,
+.cover .student-inputs .buttons > *.send .dots {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    direction: ltr;
+}
+.container .cover .add-degree .buttons > *.send .dots .dot,
+.container .cover .add-subject .buttons > *.send .dots .dot,
+.cover .student-inputs .buttons > *.send .dots .dot {
+    width: 10px;
+    height: 10px;
+    animation: 1s element-jumping linear infinite;
+    background-color: #eee;
+    border-radius: 50%;
+}
+.container .cover .add-degree .buttons > *.send .dots .dot:nth-child(2),
+.container .cover .add-subject .buttons > *.send .dots .dot:nth-child(2),
+.cover .student-inputs .buttons > *.send .dots .dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.container .cover .add-degree .buttons > *.send .dots .dot:nth-child(3),
+.container .cover .add-subject .buttons > *.send .dots .dot:nth-child(3),
+.cover .student-inputs .buttons > *.send .dots .dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.container .cover .add-degree .buttons > .waiting.send p,
+.container .cover .add-subject .buttons > .waiting.send p,
+.cover .student-inputs .buttons > .waiting.send p {
+    display: none;
+}
+.container .cover .add-degree .buttons > .waiting.send .dots,
+.container .cover .add-subject .buttons > .waiting.send .dots,
+.cover .student-inputs .buttons > .waiting.send .dots {
+    display: flex;
+}
+
+/*******************************************************************************/
+
+/*********************************** Confirm ***********************************/
+
+.container .confirm,
+.container .subjects-table .confirm,
+.confirm {
+    width: 200px;
+    overflow: hidden;
+    border-radius: 0.15rem;
+    border: 1px solid #4caf50;
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container .confirm .head,
+.container .subjects-table .confirm .head,
+.confirm .head {
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    text-align: center;
+    user-select: none;
+    padding: 5px;
+    width: 100%;
+}
+.container .confirm .body,
+.container .subjects-table .confirm .body,
+.confirm .body {
+    background-color: #fff;
+    text-align: center;
+}
+.container .confirm .body .message,
+.container .subjects-table .confirm .body .message,
+.confirm .body .message {
+    padding: 5px;
+}
+.container .confirm .body .buttons,
+.container .subjects-table .confirm .body .buttons,
+.confirm .body .buttons {
+    display: grid;
+    font-size: 16px;
+    grid-template-columns: repeat(2, 50%);
+}
+.container .confirm .body .buttons *,
+.container .subjects-table .confirm .body .buttons *,
+.confirm .body .buttons * {
+    padding: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.container .confirm .body .buttons .waiting,
+.container .subjects-table .confirm .body .buttons .waiting,
+.confirm .body .buttons .waiting {
+    grid-column: span 2;
+    display: none;
+    cursor: auto;
+}
+.container .confirm .body .buttons .waiting::after,
+.container .subjects-table .confirm .body .buttons .waiting::after,
+.confirm .body .buttons .waiting::after {
+    content: "";
+    animation: 2s dots linear infinite;
+}
+.container .confirm .body .buttons *:not(.waiting):hover,
+.container .subjects-table .confirm .body .buttons *:not(.waiting):hover,
+.confirm .body .buttons *:not(.waiting):hover {
+    box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.1294117647);
+}
+.container .confirm .body .buttons *:not(.waiting):active,
+.container .subjects-table .confirm .body .buttons *:not(.waiting):active,
+.confirm .body .buttons *:not(.waiting):active {
+    box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.2039215686);
+}
+.container .confirm.waiting .body .buttons *:not(.waiting),
+.container .subjects-table .confirm.waiting .body .buttons *:not(.waiting),
+.confirm.waiting .body .buttons *:not(.waiting) {
+    display: none;
+}
+.container .confirm.waiting .body .buttons .waiting,
+.container .subjects-table .confirm.waiting .body .buttons .waiting,
+.confirm.waiting .body .buttons .waiting {
+    display: block;
+}
+
+/*******************************************************************************/
+
+/********************************** Wait table *********************************/
+
+.wait-table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4039215686);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.wait-table::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    animation: 0.5s rotation linear infinite;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(#4caf50 320deg, #eee 320deg);
+    -webkit-mask: radial-gradient(farthest-side, transparent 80%, #fff 80%);
+    mask: radial-gradient(farthest-side, transparent 80%, #fff 80%);
+}
+
+/*******************************************************************************/
+
+/********************************** Animations *********************************/
+
+@keyframes element-jumping {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-80%);
+    }
+    30% {
+        transform: translateY(-80%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    60% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(20%);
+    }
+    80% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes dots {
+    0%, 100% {content: ""}
+    25% {content: "."}
+    50% {content: ".."}
+    75% {content: "..."}
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/*******************************************************************************/

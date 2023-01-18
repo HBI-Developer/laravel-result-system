@@ -1,0 +1,79 @@
+.main-page {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 77, 64, 0.7);
+    width: 100vw;
+    min-height: 100vh;
+}
+.main-page .header {
+    text-align: center;
+}
+.main-page .header .logo > .icon {
+    margin: 25px auto 10px;
+}
+.main-page .header .welcome {
+    color: #fff;
+    user-select: none;
+}
+.main-page .header .welcome p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.main-page .header .welcome .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.main-page .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 20px;
+}
+.main-page .container > * {
+    width: 50%;
+    padding: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.0666666667);
+    transition: 0.2s all ease-in-out;
+}
+.main-page .container > * > .icon {
+    width: 75px;
+    height: 75px;
+}
+.main-page .container > * .name {
+    color: #fff;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    user-select: none;
+}
+.main-page .container > *:hover {
+    box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.2705882353);
+}
+
+@media (max-width: 990px) {
+    .main-page .container {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .main-page .container > * {
+        width: 80%;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        border-radius: 0.15rem;
+        align-items: center;
+        column-gap: 20px;
+        padding: 15px;
+    }
+    .main-page .container > * svg {
+        width: 75px;
+    }
+}

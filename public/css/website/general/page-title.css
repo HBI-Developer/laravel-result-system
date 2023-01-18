@@ -1,0 +1,30 @@
+.to-back {
+    width: 90%;
+    display: flex;
+    margin: 10px auto 20px;
+    column-gap: 5px;
+    color: #fff;
+    font-size: 24px;
+    user-select: none;
+    font-weight: bold;
+    align-items: center;
+}
+.to-back .back-arrow {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #eee;
+    transition: 0.2s all ease-in-out;
+}
+.to-back.no-arrow .back-arrow {
+    display: none;
+}
+.to-back.no-arrow .page-title {
+    width: 95%;
+    margin: 0 auto;
+}
+.to-back .back-arrow:hover {
+    box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.0705882353);
+}
+.to-back .back-arrow:active {
+    box-shadow: inset 0 0 20px 20px rgba(255, 255, 255, 0.2039215686);
+}

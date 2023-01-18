@@ -1,0 +1,51 @@
+/************************************ Icons ************************************/
+
+.icon {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.logo-icon {
+    background-image: url("../images/logo-icon.svg");
+}
+
+.user-icon {
+    background-image: url("../images/user-icon.svg");
+}
+
+.student-icon {
+    background-image: url("../images/student-icon.svg");
+}
+
+.statistics-icon {
+    background-image: url("../images/statistics-icon.svg");
+}
+
+.subjects-icon {
+    background-image: url("../images/subjects-icon.svg");
+}
+
+.bookmark-icon {
+    background-image: url("../images/bookmark-icon.svg");
+}
+
+.clock-icon {
+    background-image: url("../images/clock-icon.svg");
+}
+
+.edit-icon {
+    background-image: url("../images/edit-icon.svg");
+}
+
+.print-icon {
+    background-image: url("../images/print-icon.svg");
+}
+
+.ministry-icon {
+    background-image: url("../images/ministry-of-education.png");
+}
+
+/*******************************************************************************/

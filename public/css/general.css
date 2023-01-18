@@ -1,0 +1,96 @@
+/*********************************** General ***********************************/
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/*******************************************************************************/
+
+/************************************* Body ************************************/
+
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    direction: rtl;
+    background-image: url("../images/bakground.jpg");
+}
+
+/*******************************************************************************/
+
+/************************************* Page ************************************/
+
+.page {
+    background-color: rgba(0, 77, 64, 0.7);
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    position: relative;
+    grid-template-rows: auto 1fr;
+}
+
+/*******************************************************************************/
+
+/********************************** Attention **********************************/
+
+.attention {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #dedede;
+    color: #272727;
+    user-select: none;
+    font-size: 17px;
+    font-weight: bold;
+    z-index: 99;
+    animation: 0.2s grows ease-in-out;
+    padding: 10px 15px;
+    border-radius: 0.15rem;
+    transform: translate(-50%, -50%);
+}
+
+/*******************************************************************************/
+
+/************************************ Tables ***********************************/
+
+.container .degrees-table .table-head,
+.container .cover .add-degree .table-head,
+.container .final-degrees .table-head,
+.container .details-degrees .table-head,
+.container .cover .add-subject .table-head,
+.container .subjects-table .table-head,
+.container .students-table .table-head,
+.container .subjects-statistics .statistics-table .table-head {
+    background-color: #4caf50;
+    font-size: 17px;
+    user-select: none;
+    color: #fff;
+    user-select: none;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/*******************************************************************************/
+
+/********************************** Animations *********************************/
+
+@keyframes grows {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    80% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*******************************************************************************/

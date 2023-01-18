@@ -1,0 +1,61 @@
+.list-container {
+    position: relative;
+    user-select: none;
+}
+.list-container.disabled {
+    background-color: #eee;
+    color: #383838;
+    user-select: none;
+}
+.list-container .selected {
+    display: grid;
+    align-items: center;
+    font-size: 18px;
+    color: #272727;
+    font-weight: bold;
+    user-select: none;
+    border-bottom: 1px solid #aaa;
+    cursor: pointer;
+    grid-template-columns: auto 1fr;
+}
+.list-container.disabled .selected {
+    cursor: auto;
+}
+.list-container .selected .open-arrow {
+    padding: 10px;
+    transform: rotateZ(90deg);
+    transition: 0.2s all ease-in-out;
+}
+.list-container.open .selected .open-arrow {
+    transform: rotateZ(270deg);
+}
+.list-container.disabled .selected .open-arrow {
+    visibility: hidden;
+}
+.list-container .selected .name {
+    text-align: center;
+}
+.list-container .list {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    transform: scaleY(0);
+    background-color: #fff;
+    z-index: 2;
+    transform-origin: top;
+    border: 1px solid #aaa;
+    transition: .2s all ease-in-out;
+}
+.list-container .list .option {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #aaa;
+    transition: 0.2s all ease-in-out;
+}
+.list-container .list .option:hover {
+    background-color: rgba(0, 0, 0, 0.0666666667);
+    padding-inline-start: 15px;
+}

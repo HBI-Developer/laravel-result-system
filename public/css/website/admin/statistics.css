@@ -1,0 +1,221 @@
+.container .subjects-statistics {
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+}
+.container .subjects-statistics .title {
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+}
+.container .subjects-statistics .statistics-table {
+    margin: 10px 0 0;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    background-color: #fff;
+}
+.container .subjects-statistics .statistics-table .state {
+    grid-column: span 3;
+}
+.container .subjects-statistics .statistics-table .subject {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-inline-end: 1px solid #aaa;
+}
+.container
+    .subjects-statistics
+    .statistics-table
+    .subject:not(:nth-last-child(3)) {
+    border-bottom: 1px solid #aaa;
+}
+.container .subjects-statistics .statistics-table .statistic {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    padding: 5px 0;
+}
+.container .subjects-statistics .statistics-table .statistic > * {
+    height: 10px;
+    width: 50%;
+    cursor: pointer;
+    animation: 0.4s width-increasing linear;
+    transition: 0.2s all ease-in-out;
+}
+.container .subjects-statistics .statistics-table .statistic > *:hover {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2705882353);
+}
+.container .subjects-statistics .statistics-table .statistic > *.active {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.462745098);
+}
+.container .subjects-statistics .statistics-table .statistic > *.male {
+    background-color: #29b6f6;
+}
+.container .subjects-statistics .statistics-table .statistic > *.female {
+    background-color: #ec407a;
+}
+.container .subjects-statistics .statistics-table .statistic > *.all {
+    background-color: #66bb6a;
+}
+.container .subjects-statistics .statistics-table .percentage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-inline-start: 1px solid #aaa;
+}
+.container .subjects-statistics .statistics-table .percentage:not(:last-child) {
+    border-bottom: 1px solid #aaa;
+}
+.container .subjects-statistics .key-statistics {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #aaa;
+    justify-content: space-evenly;
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 20px 0;
+}
+.container .subjects-statistics .key-statistics .key {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+.container .subjects-statistics .key-statistics .key .square {
+    --background: #29b6f6;
+    background-color: var(--background, #272727);
+    width: 25px;
+    height: 25px;
+    border-radius: 0.25rem;
+    display: inline-block;
+}
+.container .gender-statistics {
+    margin: 30px auto;
+}
+.container .gender-statistics .title {
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+    margin-bottom: 15px;
+}
+.container .gender-statistics .statistics {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    row-gap: 20px;
+    justify-content: space-evenly;
+}
+.container .gender-statistics .statistics .statistic-box {
+    width: 250px;
+    background-color: #fff;
+}
+.container .gender-statistics .statistics .statistic-box .gender {
+    background-color: #4caf50;
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    user-select: none;
+}
+.container .gender-statistics .statistics .statistic-box .percentage {
+    border: 1px solid #4caf50;
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+.container .gender-statistics .statistics .statistic-box .percentage > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #aaa;
+}
+.container .gender-statistics .statistics .statistic-box .percentage .circle,
+.container .gender-statistics .statistics .statistic-box .percentage .cover-one,
+.container
+    .gender-statistics
+    .statistics
+    .statistic-box
+    .percentage
+    .cover-two {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.container .gender-statistics .statistics .statistic-box .percentage .circle {
+    --gradient-color: #4caf50;
+    background: conic-gradient(
+        var(--gradient-color, #4caf50) 360deg,
+        transparent 360deg
+    );
+}
+.container
+    .gender-statistics
+    .statistics
+    .statistic-box
+    .percentage
+    .small-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    z-index: 3;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    user-select: none;
+    color: #272727;
+}
+.container
+    .gender-statistics
+    .statistics
+    .statistic-box
+    .percentage
+    .cover-one {
+    --degree: 270deg;
+    background: conic-gradient(
+        transparent 0deg,
+        transparent var(--degree, 270deg),
+        #fff var(--degree, 270deg),
+        #fff 360deg
+    );
+    z-index: 2;
+}
+.container
+    .gender-statistics
+    .statistics
+    .statistic-box
+    .percentage
+    .cover-two {
+    animation: 1s circle-increasing linear;
+    background: conic-gradient(
+        transparent 0deg,
+        transparent 360deg,
+        #fff 360deg,
+        #fff 360deg
+    );
+}
+.container .nothing {
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    color: #999;
+    user-select: none;
+    border-radius: 0.15rem;
+}

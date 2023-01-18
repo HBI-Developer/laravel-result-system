@@ -1,0 +1,257 @@
+/********************************* Time Picker *********************************/
+
+.time-picker {
+    width: 220px;
+    background-color: rgba(255, 255, 255, 0.137254902);
+}
+.time-picker .title-bar {
+    direction: rtl;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.2039215686);
+    padding: 5px 0;
+}
+.time-picker .years {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.time-picker .years .arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s all ease-in-out;
+}
+.time-picker .years .arrow.disabled {
+    color: #999;
+    cursor: auto;
+}
+.time-picker .years .arrow:not(.disabled):hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.137254902);
+}
+.time-picker .years .arrow:not(.disabled):active {
+    transform: scale(0.98);
+}
+.time-picker .years .year-input {
+    width: 160px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.time-picker .years .year-input .year {
+    width: 100%;
+    display: inline-block;
+    background-color: transparent;
+    border-bottom: 2px solid #aaa;
+    margin: 10px auto;
+    padding: 5px 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s all ease-in-out;
+    -moz-appearance: textfield;
+}
+.time-picker .years .year-input .year:focus {
+    outline: none;
+    border-color: #ddd;
+}
+.time-picker .years .year-input .year::-webkit-outer-spin-button,
+.time-picker .years .year-input .year::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+.time-picker .months {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.time-picker .months .arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s all ease-in-out;
+}
+.time-picker .months .arrow.disabled {
+    color: #999;
+    cursor: auto;
+}
+.time-picker .months .arrow:not(.disabled):hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.137254902);
+}
+.time-picker .months .arrow:not(.disabled):active {
+    transform: scale(0.98);
+}
+.time-picker .months .container {
+    width: 160px;
+    display: flex;
+    overflow: hidden;
+    column-gap: 0;
+}
+.time-picker .months .container .month {
+    min-width: 100%;
+    text-align: center;
+    transform: translateX(0);
+    color: #eee;
+    font-weight: bold;
+    font-size: 16px;
+    user-select: none;
+    padding: 10px 0;
+    transition: 0.2s all ease-in-out;
+}
+.time-picker .days {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 5px;
+    color: #eee;
+    font-weight: bold;
+    font-size: 15px;
+    user-select: none;
+}
+.time-picker .days .day {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.time-picker .days .day.disabled {
+    color: #999;
+    cursor: auto;
+}
+.time-picker .days .day.selected {
+    background-color: rgba(255, 255, 255, 0.3294117647);
+    transform: scale(1.05);
+}
+.time-picker .days .day:not(.disabled):not(.selected):hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.137254902);
+}
+.time-picker .days .day:not(.disabled):not(.selected):active {
+    transform: scale(0.98);
+}
+.time-picker .hours {
+    display: flex;
+    align-items: center;
+    color: #eee;
+    user-select: none;
+}
+.time-picker .hours input[type="number"] {
+    background-color: transparent;
+    border-bottom: 2px solid #aaa;
+    margin: 10px auto;
+    padding: 5px 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s all ease-in-out;
+    -moz-appearance: textfield;
+}
+.time-picker .hours input[type="number"]:focus {
+    outline: none;
+    border-color: #ddd;
+}
+.time-picker .hours input[type="number"]::-webkit-outer-spin-button,
+.time-picker .hours input[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+.time-picker .until-open {
+    margin: 5px 0;
+}
+.time-picker .until-open > * {
+    direction: rtl;
+    font-size: 15px;
+    color: #fff;
+    user-select: none;
+    text-align: center;
+    padding: 5px;
+}
+.time-picker .reset-time {
+    width: 95%;
+    margin: 2px auto 10px;
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+    user-select: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1294117647);
+    transition: 0.2s all ease-in-out;
+}
+.time-picker .reset-time:hover {
+    background-color: rgba(255, 255, 255, 0.1960784314);
+}
+.time-picker .reset-time:active {
+    background-color: rgba(255, 255, 255, 0.3294117647);
+}
+
+@media (max-width: 990px) {
+    .time-picker {
+        background-color: rgba(0, 0, 0, 0.5019607843);
+    }
+    .time-picker .title-bar {
+        background-color: rgba(0, 0, 0, 0.2509803922);
+    }
+}
+
+/*******************************************************************************/
+
+/************************************* Wait ************************************/
+
+.wait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    display: none;
+    position: relative;
+    border-radius: .15rem;
+    background-color: rgba(255, 255, 255, 0.137254902);
+}
+
+.wait::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    animation: 0.5s rotation linear infinite;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(#eee 320deg, transparent 320deg);
+    -webkit-mask: radial-gradient(farthest-side, transparent 80%, #fff 80%);
+    mask: radial-gradient(farthest-side, transparent 80%, #fff 80%);
+}
+
+/*******************************************************************************/
+
+/********************************** Animations *********************************/
+
+@keyframes rotation {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/*******************************************************************************/

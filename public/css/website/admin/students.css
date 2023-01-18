@@ -1,0 +1,62 @@
+.container .students-table {
+    width: 80%;
+    margin: 10px auto;
+    position: relative;
+    background-color: #fff;
+}
+.cover .student-inputs {
+    width: 80%;
+    height: fit-content;
+    margin: 20px auto 10px;
+    background-color: #fff;
+}
+.cover .student-inputs .title {
+    width: 100%;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    user-select: none;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #4caf50;
+}
+.cover .student-inputs .inputs {
+    display: grid;
+    padding: 10px;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: auto 1fr;
+}
+.cover .student-inputs .inputs .label {
+    font-size: 16px;
+    font-weight: bold;
+}
+.cover .student-inputs .inputs .select-input .selected {
+    font-size: 15px;
+}
+.cover .student-inputs .inputs .select-input .selected .open-arrow {
+    padding: 5px;
+}
+.cover .student-inputs .buttons {
+    background-color: #4caf50;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+.cover .student-inputs .buttons > * {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 50%;
+    transition: 0.2s all ease-in-out;
+}
+.cover .student-inputs .buttons > *:hover {
+    box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.2039215686);
+}
+.cover .student-inputs .buttons > *:active {
+    box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.337254902);
+}
