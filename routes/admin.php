@@ -1,6 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DegreesAdminController;
+use App\Http\Controllers\SettingsAdminController;
+use App\Http\Controllers\StatisticsAdminController;
+use App\Http\Controllers\StudentsAdminController;
+use App\Http\Controllers\SubjectsAdminController;
 use Illuminate\Support\Facades\Route;
 
 define('PAGINATION', 20);
@@ -11,8 +16,8 @@ Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 /********************************************* Statistics **********************************************/
 
-Route::get('/statistics', [AdminController::class, 'statistics'])->name('statistics');
-Route::post('/statistics/{state}', [AdminController::class, 'getStatistics']);
+Route::get('/statistics', [StatisticsAdminController::class, 'statistics'])->name('statistics');
+Route::post('/statistics/{state}', [StatisticsAdminController::class, 'getStatistics']);
 
 /*******************************************************************************************************/
 
@@ -20,11 +25,11 @@ Route::post('/statistics/{state}', [AdminController::class, 'getStatistics']);
 
 /********************************************** Students ***********************************************/
 
-Route::get('/students', [AdminController::class, 'students'])->name('students');
-Route::post('/page/students/{state}', [AdminController::class, 'studentsPage']);
-Route::post('students/create', [AdminController::class, 'addNewStudent']);
-Route::post('students/edit', [AdminController::class, 'editStudent']);
-Route::delete('students/delete/{id}', [AdminController::class, 'removeStudent']);
+Route::get('/students', [StudentsAdminController::class, 'students'])->name('students');
+Route::post('/page/students/{state}', [StudentsAdminController::class, 'studentsPage']);
+Route::post('students/create', [StudentsAdminController::class, 'addNewStudent']);
+Route::post('students/edit', [StudentsAdminController::class, 'editStudent']);
+Route::delete('students/delete/{id}', [StudentsAdminController::class, 'removeStudent']);
 
 /*******************************************************************************************************/
 
@@ -32,11 +37,11 @@ Route::delete('students/delete/{id}', [AdminController::class, 'removeStudent'])
 
 /********************************************** subjects ***********************************************/
 
-Route::get('/subjects', [AdminController::class, 'subjects'])->name('subjects');
-Route::get('/major/subjects/{major}', [AdminController::class, 'majorSubjects']);
-Route::post('/subjects/create', [AdminController::class, 'addNewSubject']);
-Route::post('/subjects/edit', [AdminController::class, 'editSubject']);
-Route::delete('/subjects/delete/{id}', [AdminController::class, 'removeSubject']);
+Route::get('/subjects', [SubjectsAdminController::class, 'subjects'])->name('subjects');
+Route::get('/major/subjects/{major}', [SubjectsAdminController::class, 'majorSubjects']);
+Route::post('/subjects/create', [SubjectsAdminController::class, 'addNewSubject']);
+Route::post('/subjects/edit', [SubjectsAdminController::class, 'editSubject']);
+Route::delete('/subjects/delete/{id}', [SubjectsAdminController::class, 'removeSubject']);
 
 /*******************************************************************************************************/
 
@@ -44,17 +49,17 @@ Route::delete('/subjects/delete/{id}', [AdminController::class, 'removeSubject']
 
 /********************************************** degrees ************************************************/
 
-Route::get('/degrees', [AdminController::class, 'degrees'])->name('degrees');
-Route::get('student/degrees/{ssn}', [AdminController::class, 'studentDegrees']);
-Route::post('page/degrees/{degreesType}/{state}', [AdminController::class, 'degreesPage']);
-Route::post('/degrees/create', [AdminController::class, 'addNewDegrees']);
-Route::post('/degrees/edit', [AdminController::class, 'editDegrees']);
-Route::delete('/degrees/delete/{student}', [AdminController::class, 'removeDegrees']);
+Route::get('/degrees', [DegreesAdminController::class, 'degrees'])->name('degrees');
+Route::get('student/degrees/{ssn}', [DegreesAdminController::class, 'studentDegrees']);
+Route::post('page/degrees/{degreesType}/{state}', [DegreesAdminController::class, 'degreesPage']);
+Route::post('/degrees/create', [DegreesAdminController::class, 'addNewDegrees']);
+Route::post('/degrees/edit', [DegreesAdminController::class, 'editDegrees']);
+Route::delete('/degrees/delete/{student}', [DegreesAdminController::class, 'removeDegrees']);
 
 /*******************************************************************************************************/
 
 /********************************************* settings ************************************************/
 
-Route::post('/put-show-date/{date}', [AdminController::class, 'putShowDate']);
+Route::post('/put-show-date/{date}', [SettingsAdminController::class, 'putShowDate']);
 
 /*******************************************************************************************************/

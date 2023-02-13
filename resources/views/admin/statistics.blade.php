@@ -1,50 +1,33 @@
-
-{{-- Use admin-page layout --}}
-
 @extends('layout.admin-pages')
 
-{{-- Assign title of page --}}
-
 @section('title', 'الإحصائيات')
-
-{{-- Add file of css in page --}}
 
 @section('css')
     <link rel="stylesheet" href="{{asset('css/website/admin/statistics.css')}}">
     <link rel="stylesheet" href="{{asset('css/website/general/list.css')}}">
 @endsection
 
-{{-- Add elements in container section --}}
-
 @section('container')
 
-    <div class="subjects-statistics"> {{-- Subjects Statistics start --}}
+    <div class="subjects-statistics">
 
         <div class="title">نسبة النجاح بالنسبة للمواد</div>
 
-        <div class="statistics-table"> {{-- Statistics table start --}}
-
-            {{-- Table head --}}
+        <div class="statistics-table">
 
             <div class="table-head">المواد</div>
+
             <div class="table-head">الإحصائيات</div>
+
             <div class="table-head">النسبة المئوية</div>
 
-            {{-- include state list-container with (all option) --}}
-            
             @include('include.list', ['type' => 'state','all' => true])
 
-            {{-- Forelse to put Statistics --}}
-
             @forelse ($details_statistics as $statistic)
-
-                {{-- If there's Statistics --}}
 
                 <div class="subject">{{ $statistic['subject'] }}</div>
 
                 <div class="statistic">
-
-                    {{-- Statistics for males, females, both to each subject --}}
 
                     <div class="male origin" style="width: {{ $statistic['males'] }}%" data-percent="{{ $statistic['males'] }}"></div>
 
@@ -54,13 +37,9 @@
 
                 </div>
 
-                {{-- Percentage both statistic as default --}}
-
                 <div class="percentage">{{ $statistic['all'] }}%</div>
 
             @empty
-
-                {{-- If there's not Statistics --}}
 
                 <div class="nothing">
                     لا يمكن بناء الإحصائيات لعدم توفر المعلومات الكافية، تأكد من توفر بيانات
@@ -69,9 +48,7 @@
 
             @endforelse
 
-        </div> {{-- Statistics table end --}}
-
-        {{-- Keys for statistics table --}}
+        </div>
 
         <div class="key-statistics">
 
@@ -89,70 +66,75 @@
 
         </div>
 
-        {{-- Wait element in table --}}
-
         <div class="wait-table"></div>
 
-    </div> {{-- Subjects Statistics end --}}
+    </div>
 
-    <div class="gender-statistics"> {{-- Gender statistics start --}}
+    <div class="gender-statistics">
 
         <div class="title">نسبة النجاح بالنسبة للطلاب</div>
 
-        <div class="statistics"> {{-- statistics start --}}
+        <div class="statistics">
 
-            <div class="statistic-box"> {{-- statistics box start --}}
+            <div class="statistic-box">
 
                 <div class="gender">ذكور</div>
 
                 <div class="percentage">
 
                     <div class="circle" style="--gradient-color: #29B6F6;"></div>
+
                     <div class="small-circle">{{ $total_statistics['males'] }}%</div>
+
                     <div class="cover-one" style="--degree: {{ ($total_statistics['males'] / 100) * 360 }}deg"></div>
+
                     <div class="cover-two"></div>
 
                 </div>
 
-            </div> {{-- statistics box end --}}
+            </div>
 
-            <div class="statistic-box"> {{-- statistics box start --}}
+            <div class="statistic-box">
 
                 <div class="gender">إناث</div>
 
                 <div class="percentage">
 
                     <div class="circle" style="--gradient-color: #EC407A;"></div>
+
                     <div class="small-circle">{{ $total_statistics['females'] }}%</div>
+
                     <div class="cover-one" style="--degree: {{ ($total_statistics['females'] / 100) * 360 }}deg"></div>
+
                     <div class="cover-two"></div>
 
                 </div>
 
-            </div> {{-- statistics box end --}}
+            </div>
 
-            <div class="statistic-box"> {{-- statistics box start --}}
+            <div class="statistic-box">
 
                 <div class="gender">الكل</div>
 
                 <div class="percentage">
 
                     <div class="circle" style="--gradient-color: #66BB6A;"></div>
+
                     <div class="small-circle">{{ $total_statistics['all'] }}%</div>
+
                     <div class="cover-one" style="--degree: {{ ($total_statistics['all'] / 100) * 360 }}deg"></div>
+
                     <div class="cover-two"></div>
 
                 </div>
 
-            </div> {{-- statistics box end --}}
+            </div>
 
-        </div> {{-- statistics start --}}
+        </div>
 
-    </div> {{-- Gender statistics end --}}
+    </div>
 
 @endsection
-
-{{-- Add file of js in page --}}
 
 @section('js')
     <script src="{{ asset('js/website/admin/statistics.js') }}"></script>

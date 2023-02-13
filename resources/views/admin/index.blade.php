@@ -9,8 +9,6 @@
         <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
         <title>مسؤول النظام</title>
 
-        {{-- Add file of css in page --}}
-
         <link rel="stylesheet" href="{{asset('css/general.css')}}">
         <link rel="stylesheet" href="{{asset('css/icons.css')}}">
         <link rel="stylesheet" href="{{asset('css/website/general/header-index.css')}}">
@@ -21,13 +19,13 @@
 
     <body>
 
-        <section class="page"> {{-- Page start --}}
+        <section class="page">
 
             @include('include.header-index')
 
-            <div class="container"> {{-- container start --}}
+            <div class="container">
 
-                <div class="sidebar"> {{-- Sidebar [Shown in big screen] --}}
+                <div class="sidebar">
 
                     <div class="option clock">
 
@@ -35,15 +33,15 @@
 
                     </div>
 
-                </div> {{-- Sidebar [Shown in big screen] --}}
+                </div>
 
-                <div class="option clock"> {{-- [Shown in small screen] --}}
+                <div class="option clock">
 
                     <div class="icon clock-icon"></div>
 
-                </div> {{-- [Shown in small screen] --}}
+                </div>
 
-                <div class="options"> {{-- Options start [Links to other pages] --}}
+                <div class="options">
 
                     <a class="option statistics" href="{{route('statistics')}}">
                         <div class="icon statistics-icon"></div>
@@ -65,21 +63,17 @@
                         <div class="name">الدرجات</div>
                     </a>
 
-                </div> {{-- Options end --}}
+                </div>
 
-            </div> {{-- container end --}}
+            </div>
 
             <div class="cover">
-
-                {{-- include time picker --}}
 
                 @include('include.time-picker')
 
             </div>
 
-        </section> {{-- Page end --}}
-
-        {{-- Add file of js in page --}}
+        </section>
 
         <script src="{{asset('js/vendor/jQuery.js')}}"></script>
         <script src="{{asset('js/website/general.js')}}"></script>

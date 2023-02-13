@@ -18,20 +18,18 @@
             <div class="header">
 
                 <div class="logo">
+
                     <div class="icon logo-icon"></div>
+
                 </div>
 
                 <div class="title">نظام النتائج</div>
 
             </div>
 
-            {{-- If type variable equal 'admin' route to check admin else route to check student --}}
-
             <form class="container" action="{{ $type === 'admin' ? route('check.admin') : route('check.student') }}" method="POST">
 
                 @csrf
-
-                {{-- Yield form --}}
 
                 @yield('form')
 

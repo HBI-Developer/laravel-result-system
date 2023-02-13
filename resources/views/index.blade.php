@@ -19,12 +19,17 @@
             <div class="header">
 
                 <div class="logo">
+
                     <div class="icon logo-icon"></div>
+
                 </div>
 
                 <div class="welcome">
+
                     <p>مرحباً بك في</p>
+
                     <div class="title">نظام النتائج</div>
+
                 </div>
 
             </div>
@@ -32,13 +37,19 @@
             <div class="container">
 
                 <a class="admin" href="{{route('admin.login')}}">
+
                     <div class="icon user-icon"></div>
+
                     <div class="name">مسؤول النظام</div>
+
                 </a>
 
                 <a class="student" href="{{route('student.login')}}">
+
                     <div class="icon student-icon"></div>
+
                     <div class="name">طالب</div>
+                    
                 </a>
 
             </div>

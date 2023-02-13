@@ -1,79 +1,81 @@
-<div class="time-picker" dir="ltr"> {{-- Time Picker start --}}
+<div class="time-picker" dir="ltr">
 
-    <div class="title-bar">عرض النتائج بتاريخ...</div> {{-- Title of time picker --}}
+    <div class="title-bar">عرض النتائج بتاريخ...</div>
 
-    <div class="years"> {{-- Year input start --}}
+    <div class="years">
 
-        <div class='arrow prev'>
-            &langle;
-        </div>
+        <div class='arrow prev'>&langle;</div>
 
         <div class="year-input">
+
             <input type="number" class="year open" min='2022' value='2022' />
+
         </div>
 
-        <div class="arrow next">
-            &rangle;
-        </div>
+        <div class="arrow next">&rangle;</div>
 
-    </div> {{-- Year input end --}}
+    </div>
 
-    <div class="months"> {{-- Month Slider start --}}
+    <div class="months"> 
 
-        <div class='arrow prev'>
-            &langle;
-        </div>
+        <div class='arrow prev'>&langle;</div>
 
         <div class="container">
-
-            {{-- List of months --}}
 
             <div class="month">
                 يناير
             </div>
+
             <div class="month">
                 فبراير
             </div>
+
             <div class="month">
                 مارس
             </div>
+
             <div class="month">
                 أبريل
             </div>
+
             <div class="month">
                 مايو
             </div>
+
             <div class="month">
                 يونيو
             </div>
+
             <div class="month">
                 يوليو
             </div>
+
             <div class="month">
                 أغسطس
             </div>
+
             <div class="month">
                 سبتمبر
             </div>
+
             <div class="month">
                 أكتوبر
             </div>
+
             <div class="month">
                 نوفمبر
             </div>
+
             <div class="month">
                 ديسمبر
             </div>
+
         </div>
 
-        <div class="arrow next">
-            &rangle;
-        </div>
+        <div class="arrow next">&rangle;</div>
 
-    </div> {{-- Month Slider end --}}
+    </div> 
 
-    {{-- List of days --}}
-    
     <div class="days">
         <div class="day">1</div>
         <div class="day">2</div>
@@ -109,11 +111,9 @@
     </div>
 
     <div class="hours">
-        {{-- Hour input --}}
+        
         <input type="number" class="hour" min="0" max="23" value="00" />
-
         :
-        {{-- Minute input --}}
         <input type="number" class="minute" min="0" max="59" value="00" />
 
     </div>
@@ -122,20 +122,16 @@
 
         <div class="text">بقي حتى العرض:</div>
 
-        {{-- Counter element --}}
-
         <div class="counter">00:00:00:00</div>
 
     </div>
 
-    {{-- Reset button --}}
+    
 
     <div class="reset-time">
         إعادة ضبط
     </div>
 
-</div> {{-- Time Picker end --}}
-
-{{-- Wait element in time picker --}}
+</div> 
 
 <div class="wait"></div>
